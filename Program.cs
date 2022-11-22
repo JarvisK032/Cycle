@@ -19,8 +19,11 @@ namespace Unit05
         {
             // create the cast
             Cast cast = new Cast();
+            cast.AddActor("snaketwo", new SnakeTwo());
             cast.AddActor("snake", new Snake());
             cast.AddActor("score", new Score());
+            cast.AddActor("scoretwo", new ScoreTwo());
+
 
             // create the services
             KeyboardService keyboardService = new KeyboardService();
@@ -28,7 +31,8 @@ namespace Unit05
 
             // create the script
             Script script = new Script();
-            script.AddAction("input", new ControlActorsAction(keyboardService));
+            script.AddAction("input", new ControlSnakeOneAction(keyboardService));
+            script.AddAction("input", new ControlSnakeTwoAction(keyboardService));
             script.AddAction("update", new MoveActorsAction());
             script.AddAction("update", new HandleCollisionsAction());
             script.AddAction("output", new DrawActorsAction(videoService));

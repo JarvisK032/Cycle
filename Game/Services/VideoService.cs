@@ -14,7 +14,7 @@ namespace Unit05.Game.Services
     /// </summary>
     public class VideoService
     {
-        private bool _debug = false;
+        private bool debug = false;
 
         /// <summary>
         /// Constructs a new instance of KeyboardService using the given cell size.
@@ -22,7 +22,7 @@ namespace Unit05.Game.Services
         /// <param name="cellSize">The cell size (in pixels).</param>
         public VideoService(bool debug)
         {
-            this._debug = debug;
+            this.debug = debug;
         }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace Unit05.Game.Services
         {
             Raylib.BeginDrawing();
             Raylib.ClearBackground(Raylib_cs.Color.BLACK);
-            if (_debug)
+            if (debug)
             {
                 DrawGrid();
             }
@@ -73,7 +73,7 @@ namespace Unit05.Game.Services
                 DrawActor(actor);
             }
         }
-        
+
         /// <summary>
         /// Copies the buffer contents to the screen. This method should be called at the end of
         /// the game's output phase.

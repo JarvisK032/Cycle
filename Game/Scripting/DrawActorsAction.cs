@@ -11,31 +11,35 @@ namespace Unit05.Game.Scripting
     /// </summary>
     public class DrawActorsAction : Action
     {
-        private VideoService _videoService;
+        private VideoService videoService;
 
         /// <summary>
         /// Constructs a new instance of ControlActorsAction using the given KeyboardService.
         /// </summary>
         public DrawActorsAction(VideoService videoService)
         {
-            this._videoService = videoService;
+            this.videoService = videoService;
         }
 
         /// <inheritdoc/>
         public void Execute(Cast cast, Script script)
         {
             Snake snake = (Snake)cast.GetFirstActor("snake");
-            List<Actor> segments = snake.GetSegments();
+            List<Actor> segments1 = snake.GetSegments();
+            SnakeTwo sanketwo = (SnakeTwo)cast.GetFirstActor("snaketwo");
+            List<Actor> segments2 = sanketwo.GetSegments();
             Actor score = cast.GetFirstActor("score");
-            Actor food = cast.GetFirstActor("food");
+            Actor scroetwo = cast.GetFirstActor("scoretwo");
+            scroetwo.SetPosition(new Point(Constants.MAX_X - 100, 0));
             List<Actor> messages = cast.GetActors("messages");
-            
-            _videoService.ClearBuffer();
-            _videoService.DrawActors(segments);
-            _videoService.DrawActor(score);
-            _videoService.DrawActor(food);
-            _videoService.DrawActors(messages);
-            _videoService.FlushBuffer();
+
+            videoService.ClearBuffer();
+            videoService.DrawActors(segments1);
+            videoService.DrawActors(segments2);
+            videoService.DrawActor(score);
+            videoService.DrawActor(scroetwo);
+            videoService.DrawActors(messages);
+            videoService.FlushBuffer();
         }
     }
 }

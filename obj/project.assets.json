@@ -125,11 +125,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jarvi\\Documents\\cse210\\cse210-student-articulate-csharp-complete-main\\Unit05\\Unit05.csproj",
+      "projectUniqueName": "C:\\Users\\jarvi\\Documents\\github\\cycle\\Cycle\\Unit05.csproj",
       "projectName": "Unit05",
-      "projectPath": "C:\\Users\\jarvi\\Documents\\cse210\\cse210-student-articulate-csharp-complete-main\\Unit05\\Unit05.csproj",
+      "projectPath": "C:\\Users\\jarvi\\Documents\\github\\cycle\\Cycle\\Unit05.csproj",
       "packagesPath": "C:\\Users\\jarvi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jarvi\\Documents\\cse210\\cse210-student-articulate-csharp-complete-main\\Unit05\\obj\\",
+      "outputPath": "C:\\Users\\jarvi\\Documents\\github\\cycle\\Cycle\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jarvi\\AppData\\Roaming\\NuGet\\NuGet.Config"

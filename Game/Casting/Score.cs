@@ -18,17 +18,17 @@ namespace Unit05.Game.Casting
         /// </summary>
         public Score()
         {
-            AddPoints(0);
+            AddPointsOne(0);
         }
 
         /// <summary>
         /// Adds the given points to the score.
         /// </summary>
         /// <param name="points">The points to add.</param>
-        public void AddPoints(int points)
+        public void AddPointsOne(int points)
         {
             this._points += points;
-            SetText($"Score: {this._points}");
+            SetText($"Player One: {this._points}");
         }
     }
 }

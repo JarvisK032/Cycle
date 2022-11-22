@@ -14,7 +14,7 @@ namespace Unit05.Game.Directing
     /// </summary>
     public class Director
     {
-        private VideoService _videoService = null;
+        private VideoService videoService = null;
 
         /// <summary>
         /// Constructs a new instance of Director using the given KeyboardService and VideoService.
@@ -22,7 +22,7 @@ namespace Unit05.Game.Directing
         /// <param name="videoService">The given VideoService.</param>
         public Director(VideoService videoService)
         {
-            this._videoService = videoService;
+            this.videoService = videoService;
         }
 
         /// <summary>
@@ -32,14 +32,14 @@ namespace Unit05.Game.Directing
         /// <param name="script">The given script.</param>
         public void StartGame(Cast cast, Script script)
         {
-            _videoService.OpenWindow();
-            while (_videoService.IsWindowOpen())
+            videoService.OpenWindow();
+            while (videoService.IsWindowOpen())
             {
                 ExecuteActions("input", cast, script);
                 ExecuteActions("update", cast, script);
                 ExecuteActions("output", cast, script);
             }
-            _videoService.CloseWindow();
+            videoService.CloseWindow();
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Unit05.Game.Directing
         private void ExecuteActions(string group, Cast cast, Script script)
         {
             List<Action> actions = script.GetActions(group);
-            foreach(Action action in actions)
+            foreach (Action action in actions)
             {
                 action.Execute(cast, script);
             }
