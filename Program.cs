@@ -39,6 +39,7 @@ namespace Unit05
 
             // start the game
             Director director = new Director(videoService);
+
             director.StartGame(cast, script);
         }
     }

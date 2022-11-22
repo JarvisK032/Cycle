@@ -50,7 +50,7 @@ namespace Unit05.Game.Scripting
                 direction = new Point(0, Constants.CELL_SIZE);
             }
 
-            SnakeTwo snaketwo = (SnakeTwo)cast.GetFirstActor("Snaketwo");
+            SnakeTwo snaketwo = (SnakeTwo)cast.GetFirstActor("snaketwo");
             snaketwo.TurnHead(direction);
 
         }

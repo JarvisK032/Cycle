@@ -44,10 +44,10 @@ namespace Unit05.Game.Scripting
         /// <param name="cast">The cast of actors.</param>
         private void HandleGrowth(Cast cast)
         {
-            Snake snake = (Snake)cast.GetFirstActor("cycleone");
-            SnakeTwo snaketwo = (SnakeTwo)cast.GetFirstActor("cycletwo");
-            Score score = (Score)cast.GetFirstActor("onescore");
-            ScoreTwo scoretwo = (ScoreTwo)cast.GetFirstActor("twoscore");
+            Snake snake = (Snake)cast.GetFirstActor("snake");
+            SnakeTwo snaketwo = (SnakeTwo)cast.GetFirstActor("snaketwo");
+            Score score = (Score)cast.GetFirstActor("score");
+            ScoreTwo scoretwo = (ScoreTwo)cast.GetFirstActor("scoretwo");
             counter = counter + 1;
             if (counter % 15 == 0)
             {
@@ -65,12 +65,12 @@ namespace Unit05.Game.Scripting
         /// <param name="cast">The cast of actors.</param>
         private void HandleSegmentCollisions(Cast cast)
         {
-            Snake snake = (Snake)cast.GetFirstActor("cycleone");
+            Snake snake = (Snake)cast.GetFirstActor("snake");
             Actor head1 = snake.GetHead();
             List<Actor> body1 = snake.GetBody();
-            SnakeTwo cycletwo = (SnakeTwo)cast.GetFirstActor("cycletwo");
-            Actor head2 = cycletwo.GetHead();
-            List<Actor> body2 = cycletwo.GetBody();
+            SnakeTwo snaketwo = (SnakeTwo)cast.GetFirstActor("snaketwo");
+            Actor head2 = snaketwo.GetHead();
+            List<Actor> body2 = snaketwo.GetBody();
 
             foreach (Actor segment1 in body1)
             {
@@ -110,9 +110,9 @@ namespace Unit05.Game.Scripting
         {
             if (isGameOver == true)
             {
-                Snake snake = (Snake)cast.GetFirstActor("cycleone");
+                Snake snake = (Snake)cast.GetFirstActor("snake");
                 List<Actor> segments1 = snake.GetSegments();
-                SnakeTwo snaketwo = (SnakeTwo)cast.GetFirstActor("cycletwo");
+                SnakeTwo snaketwo = (SnakeTwo)cast.GetFirstActor("snaketwo");
                 List<Actor> segments2 = snaketwo.GetSegments();
 
                 // create a "game over" message
